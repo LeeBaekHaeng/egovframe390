@@ -517,6 +517,20 @@
 		<!-- god -->
 		<dependency>
 			<groupId>god</groupId>
+			<artifactId>admin</artifactId>
+			<version>1.0.0</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>god</groupId>
+			<artifactId>admin</artifactId>
+			<version>1.0.0</version>
+			<classifier>classes</classifier>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>god</groupId>
 			<artifactId>egov</artifactId>
 			<version>1.0.0</version>
 			<type>war</type>
@@ -526,6 +540,7 @@
 			<artifactId>egov</artifactId>
 			<version>1.0.0</version>
 			<classifier>classes</classifier>
+			<scope>provided</scope>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
@@ -644,6 +659,17 @@
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>2.9.1</version>
 			</plugin>
+
+			<!-- god -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.3.1</version>
+				<configuration>
+					<attachClasses>true</attachClasses>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 	<reporting>
