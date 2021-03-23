@@ -23,6 +23,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @ContextConfiguration({ "classpath*:egovframework/spring/com/**/context-*.xml" })
 @ActiveProfiles({ "mysql", "dummy" })
+
 @Transactional(readOnly = true)
 public class CmmUseDAOTest {
 
