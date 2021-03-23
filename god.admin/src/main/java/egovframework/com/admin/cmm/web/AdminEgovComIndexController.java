@@ -38,4 +38,24 @@ public class AdminEgovComIndexController {
 		return "egovframework/com/cmm/EgovUnitMain";
 	}
 
+	@RequestMapping("/admin/indexJson.do")
+	public String indexJson(ModelMap model) {
+		ComDefaultCodeVO vo = new ComDefaultCodeVO();
+		vo.setCodeId("COM001");
+
+		List<CmmnDetailCode> results = new ArrayList<>();
+		try {
+			results = adminCmmUseDAO.selectCmmCodeDetail(vo);
+		} catch (Exception e) {
+			log.error(e.getMessage());
+		}
+
+		log.debug("results={}", results);
+		log.debug("size={}", results.size());
+
+		model.addAttribute("results", results);
+
+		return "jsonView";
+	}
+
 }
