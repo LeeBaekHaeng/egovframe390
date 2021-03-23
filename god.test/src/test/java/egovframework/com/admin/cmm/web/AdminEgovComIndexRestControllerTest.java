@@ -30,4 +30,16 @@ public class AdminEgovComIndexRestControllerTest {
 		log.debug("json={}", json);
 	}
 
+	@Test
+	public void test3() {
+		log.debug("test3");
+
+		RestTemplate restTemplate = new RestTemplate();
+
+		String json = restTemplate.getForObject("http://localhost:8080/admin/uat/uap/selectLoginPolicyList.do",
+				String.class);
+
+		log.debug("json={}", json);
+	}
+
 }
